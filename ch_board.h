@@ -10,12 +10,12 @@
 #include <cstdlib>
 
 #include "./debug_utils/error_control.h"
-#include "ch_piece.h" //not neccessary
+#include "./ch_piece/ch_piece.h" //not neccessary
 #include "ch_player.h"
 
 //-----------------------------------------------------------------------------------------
 
-//namespace piece {
+//namespace board {
 
 static const short SIZE_OF_BOARD = 8;
 static const short NUM_OF_CELLS = SIZE_OF_BOARD * SIZE_OF_BOARD;
@@ -37,12 +37,10 @@ class board_t {
         //constructor & destructor
         explicit board_t ();
         virtual ~board_t ();
-        int init_pawns   (); //TODO:
+        //TODO: int init_pawns   ();
         //others methods
         int dump (const char* dump_file = "./logs/board_dump");
 };
-
-
 //}
 
 //-----------------------------------------------------------------------------------------

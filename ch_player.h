@@ -10,7 +10,7 @@
 #include <cstdlib>
 
 #include "./debug_utils/error_control.h"
-#include "ch_piece.h"
+#include "./ch_piece/ch_piece.h"
 
 //-----------------------------------------------------------------------------------------
 

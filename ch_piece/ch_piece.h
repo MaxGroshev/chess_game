@@ -7,7 +7,7 @@
 #include <string>
 #include <cstdlib>
 
-#include "./debug_utils/error_control.h"
+#include "../debug_utils/error_control.h"
 
 //-----------------------------------------------------------------------------------------
 
@@ -41,14 +41,14 @@ struct coordinates_t {
 };
 
 class piece_t {
-    private:
+    protected:
         bool  is_alive;
         short color;
         short name;
         coordinates_t coordinates;
     public:
         //constructor & destructor
-        explicit piece_t (short color_, short name_, coordinates_t coord_);
+        explicit piece_t (short color_, coordinates_t coord_);
         virtual ~piece_t ();
         //get_piece_data methods
         inline short         get_color () const {return color;};
@@ -56,9 +56,16 @@ class piece_t {
         inline coordinates_t get_pos   () const {return coordinates;};
         inline short         get_x     () const {return coordinates.x;};
         inline short         get_y     () const {return coordinates.y;};
+        //virtual methods
+        virtual bool can_move () const = 0;
+
         //others methods
 
 };
+
+
+#include "ch_piece_logic.h"
+
 }
 
 //-----------------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-#include "ch_piece.h"
+#include "./ch_piece/ch_piece.h"
 #include "ch_player.h"
 #include "ch_board.h"
 

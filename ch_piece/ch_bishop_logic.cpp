@@ -6,17 +6,18 @@ using namespace piece;
 
 //-----------------------------------------------------------------------------------------
 
-piece_t::piece_t (short color_, short name_, coordinates_t coord_) {
-    name  = name_;
-    color = color_;
-    coordinates = coord_;
+bishop_t::bishop_t (short color_, coordinates_t coord_) : piece_t  (color_, coord_) {
+    name = BISHOP;
 }
 
-piece_t::~piece_t () {
+bishop_t::~bishop_t () {
 
 }
 
 //-----------------------------------------------------------------------------------------
 
+bool bishop_t:: can_move () const {
+    return true;
+}
 
-
+//-----------------------------------------------------------------------------------------

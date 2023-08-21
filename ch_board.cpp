@@ -23,7 +23,7 @@ board_t::board_t () {
             for (short j = 0; j < SIZE_OF_BOARD; j++) {
                 coord = {i, j};
                 cells[i][j].is_empty = false;
-                cells[i][j].piece = new piece_t (color, PAWN, coord);
+                cells[i][j].piece = new pawn_t (color, coord);
             }
         }
         else if (i >= 6 || i <= 1) {//Probably make variable naum of lines
@@ -33,23 +33,23 @@ board_t::board_t () {
             for (short j = 0; j < SIZE_OF_BOARD; j++) {
                     coord = {i, j};
                     cells[i][j].is_empty = false;
-                    switch (j) { //TODO: improve
+                    switch (j) { //TODO: make func
                         case 0:
-                            cells[i][j].piece = new piece_t (color, ROOK, coord); break;
+                            cells[i][j].piece = new rook_t   (color, coord); break;
                         case 1:
-                            cells[i][j].piece = new piece_t (color, KNIGHT, coord); break;
+                            cells[i][j].piece = new knight_t (color, coord); break;
                         case 2:
-                            cells[i][j].piece = new piece_t (color, BISHOP, coord); break;
+                            cells[i][j].piece = new bishop_t (color, coord); break;
                         case 3:
-                            cells[i][j].piece = new piece_t (color, KING, coord); break;
+                            cells[i][j].piece = new king_t   (color, coord); break;
                         case 4:
-                            cells[i][j].piece = new piece_t (color, QUEEN, coord); break;
+                            cells[i][j].piece = new queen_t  (color, coord); break;
                         case 5:
-                            cells[i][j].piece = new piece_t (color, BISHOP, coord); break;
+                            cells[i][j].piece = new bishop_t (color, coord); break;
                         case 6:
-                            cells[i][j].piece = new piece_t (color, KNIGHT, coord); break;
+                            cells[i][j].piece = new knight_t (color, coord); break;
                         case 7:
-                            cells[i][j].piece = new piece_t (color, ROOK, coord); break;
+                            cells[i][j].piece = new rook_t   (color, coord); break;
                     }
                 }
         }
