@@ -13,7 +13,6 @@
 
 namespace piece {
 
-static const short SIZE_OF_DESK = 8; //remove to desk settings
 static const short INIT_NUM_OF_PIECES = 16;
 static const short INIT_NUM_OF_PAWNS  = 8;
 static const short INIT_NUM_OF_KNIGHTS= 2;

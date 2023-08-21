@@ -1,14 +1,16 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+//-----------------------------------------------------------------------------------------
+
 #include <iostream>
 #include <fstream>
 #include <cstring>
 #include <string>
 #include <cstdlib>
 
-#include "ch_piece.h"
 #include "./debug_utils/error_control.h"
+#include "ch_piece.h"
 
 //-----------------------------------------------------------------------------------------
 

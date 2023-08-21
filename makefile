@@ -11,7 +11,6 @@ CFLAGS  = -Wshadow    							\
 		   -Wmissing-declarations 				\
 		   -Wmissing-include-dirs 				\
 		   -Wswitch-enum 						\
-		   -Wswitch-default 					\
 		   -Wmain 								\
 		   -Wextra 								\
 		   -Wall 								\
