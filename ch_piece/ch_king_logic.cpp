@@ -16,7 +16,12 @@ king_t::~king_t () {
 
 //-----------------------------------------------------------------------------------------
 
-bool king_t:: can_move () const {
+bool king_t::can_move (const coordinates_t from,
+                       const coordinates_t to) const {
+    if (!((my_abs (to.x - from.x)) == 1)  || !((my_abs (to.y - from.y)) == 1)) {
+        cout << "Wrong move for king";
+        return false;
+    }
     return true;
 }
 

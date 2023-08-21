@@ -17,5 +17,14 @@ piece_t::~piece_t () {
 
 //-----------------------------------------------------------------------------------------
 
+bool  piece_t::is_ally (const piece_t & piece) const {
+    if (this.color != piece.color) return false;
+    else                           return true;
+}
 
+//-----------------------------------------------------------------------------------------
 
+int my_abs (int x) {
+    if (x < 0 ) return -x;
+    return x;
+}

@@ -16,7 +16,8 @@ rook_t::~rook_t () {
 
 //-----------------------------------------------------------------------------------------
 
-bool rook_t:: can_move () const {
+bool rook_t::can_move (const coordinates_t from,
+                       const coordinates_t to) const {
     return true;
 }
 

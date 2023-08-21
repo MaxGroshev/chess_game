@@ -16,7 +16,8 @@ queen_t::~queen_t () {
 
 //-----------------------------------------------------------------------------------------
 
-bool queen_t:: can_move () const {
+bool queen_t::can_move (const coordinates_t from,
+                        const coordinates_t to) const {
     return true;
 }
 

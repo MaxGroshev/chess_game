@@ -56,17 +56,22 @@ class piece_t {
         inline coordinates_t get_pos   () const {return coordinates;};
         inline short         get_x     () const {return coordinates.x;};
         inline short         get_y     () const {return coordinates.y;};
+        //condition methods
+        bool   short         is_ally   (const piece_t & piece) const;
         //virtual methods
         virtual bool can_move () const = 0;
 
         //others methods
-
 };
 
 
 #include "ch_piece_logic.h"
 
 }
+
+//-----------------------------------------------------------------------------------------
+
+int my_abs (int x); //make polymorf
 
 //-----------------------------------------------------------------------------------------
 

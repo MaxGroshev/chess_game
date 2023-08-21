@@ -31,27 +31,27 @@ board_t::board_t () {
             if (i > 6) color = piece::BLACK;
             coordinates_t coord = {0, 0};
             for (short j = 0; j < SIZE_OF_BOARD; j++) {
-                    coord = {i, j};
-                    cells[i][j].is_empty = false;
-                    switch (j) { //TODO: make func
-                        case 0:
-                            cells[i][j].piece = new rook_t   (color, coord); break;
-                        case 1:
-                            cells[i][j].piece = new knight_t (color, coord); break;
-                        case 2:
-                            cells[i][j].piece = new bishop_t (color, coord); break;
-                        case 3:
-                            cells[i][j].piece = new king_t   (color, coord); break;
-                        case 4:
-                            cells[i][j].piece = new queen_t  (color, coord); break;
-                        case 5:
-                            cells[i][j].piece = new bishop_t (color, coord); break;
-                        case 6:
-                            cells[i][j].piece = new knight_t (color, coord); break;
-                        case 7:
-                            cells[i][j].piece = new rook_t   (color, coord); break;
-                    }
+                coord = {i, j};
+                cells[i][j].is_empty = false;
+                switch (j) { //TODO: make func
+                    case 0:
+                        cells[i][j].piece = new rook_t   (color, coord); break;
+                    case 1:
+                        cells[i][j].piece = new knight_t (color, coord); break;
+                    case 2:
+                        cells[i][j].piece = new bishop_t (color, coord); break;
+                    case 3:
+                        cells[i][j].piece = new king_t   (color, coord); break;
+                    case 4:
+                        cells[i][j].piece = new queen_t  (color, coord); break;
+                    case 5:
+                        cells[i][j].piece = new bishop_t (color, coord); break;
+                    case 6:
+                        cells[i][j].piece = new knight_t (color, coord); break;
+                    case 7:
+                        cells[i][j].piece = new rook_t   (color, coord); break;
                 }
+            }
         }
     }
 }
@@ -75,7 +75,7 @@ int board_t::dump (const char* dump_file) {
         return -1;
     }
 
-    clock_t now = time (NULL);
+    clock_t now = time (NULL); //TODO: make func
     char* current_time = ctime (&now);
 
     out_file << std::endl << "----------Here is dump of board---------\n"
