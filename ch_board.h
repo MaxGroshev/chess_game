@@ -11,7 +11,7 @@
 
 #include "./debug_utils/error_control.h"
 #include "./ch_piece/ch_piece.h" //not neccessary
-#include "ch_player.h"
+#include "ch_logs.h"
 
 //-----------------------------------------------------------------------------------------
 
@@ -40,6 +40,12 @@ class board_t {
         //TODO: int init_pawns   ();
         //others methods
         int dump (const char* dump_file = "./logs/board_dump");
+        std::ostream & display_pos (std::ostream & os);
+        bool is_allowed_move (const piece::coordinates_t from,
+                              const piece::coordinates_t to, const short walking_color);
+        int change_piece_pos (const piece::coordinates_t* from,
+                              const piece::coordinates_t* to);
+
 };
 //}
 

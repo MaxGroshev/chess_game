@@ -19,3 +19,10 @@ int print_error_message (const char* file_, const char* func_, int line_) {
 
     return 0;
 }
+
+//-----------------------------------------------------------------------------------------
+
+char* timestamp () {
+    clock_t now = time (NULL);
+    return ctime (&now);
+}

@@ -21,7 +21,8 @@
 
 //-----------------------------------------------------------------------------------------
 
-int is_nullptr (void* ptr);
-int print_error_message (const char* file_, const char* func_, int line_);
+int   is_nullptr (void* ptr);
+char* timestamp  ();
+int   print_error_message (const char* file_, const char* func_, int line_);
 
 #endif

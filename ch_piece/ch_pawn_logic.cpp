@@ -18,11 +18,24 @@ pawn_t::~pawn_t () {
 
 bool pawn_t::can_move (const coordinates_t from,
                        const coordinates_t to) const {
-    if (!((from.y == to.y))){ // not finished
-        cout << "Wrong move for pawn";
-        return false;
+    if ((from.x == to.x) && (color == WHITE) && (to.y - from.y == 1)) {
+        return true;                  // because move to greater numbers
     }
-    return true;
+    else if ((from.x == to.x) && (color == BLACK) && (from.y - to.y == 1)) {
+        return true;                  // because move to less numbers
+    }
+    else if ((from.x == to.x) && (color == WHITE) && (from.y - to.y == 2) &&
+             (from.y == 1)) {         //TODO: array with init positions
+        return true;
+    }
+    else if ((from.x == to.x) && (color == BLACK) && (from.y - to.y == 2) &&
+             (from.y == 6)) {
+        return true;
+    }
+    else {
+        std::cout << "Wrong pawn move\n";
+    }
+    return false;
 }
 
 //-----------------------------------------------------------------------------------------

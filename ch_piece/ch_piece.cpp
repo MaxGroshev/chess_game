@@ -17,9 +17,9 @@ piece_t::~piece_t () {
 
 //-----------------------------------------------------------------------------------------
 
-bool  piece_t::is_ally (const piece_t & piece) const {
-    if (this.color != piece.color) return false;
-    else                           return true;
+bool piece_t::is_ally (const piece_t & piece) const {
+    if (this->color != piece.color) return false;
+    else                            return true;
 }
 
 //-----------------------------------------------------------------------------------------

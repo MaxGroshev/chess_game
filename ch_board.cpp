@@ -57,6 +57,7 @@ board_t::board_t () {
 }
 
 board_t::~board_t () {
+    cout << "want_to clear\n";
     for (int i = 0; i < SIZE_OF_BOARD; i++) {
         for (int j = 0; j < SIZE_OF_BOARD; j++) {
             delete cells[i][j].piece;
@@ -75,37 +76,11 @@ int board_t::dump (const char* dump_file) {
         return -1;
     }
 
-    clock_t now = time (NULL); //TODO: make func
-    char* current_time = ctime (&now);
-
     out_file << std::endl << "----------Here is dump of board---------\n"
-    << "print_time: "  << current_time
+    << "print_time: "  << timestamp ()
     << "# - ERROR\n"
     << "----------------------------------------\n";
-    for (int i = 0; i < SIZE_OF_BOARD; i++) {
-        for (int j = 0; j < SIZE_OF_BOARD; j++) {
-            if (cells[i][j].is_empty) out_file << " 0 ";
-            else {
-                switch (cells[i][j].piece->get_name ()) { //TODO: improve
-                    case PAWN:
-                        out_file << " * "; break;
-                    case KNIGHT:
-                        out_file << " % "; break;
-                    case ROOK:
-                        out_file << " ! "; break;
-                    case BISHOP:
-                        out_file << " @ "; break;
-                    case KING:
-                        out_file << " & "; break;
-                    case QUEEN:
-                        out_file << " $ "; break;
-                    default:
-                        out_file << " # "; break;
-                }
-            }
-        }
-        out_file << endl;
-    }
+    display_pos (out_file); //didn't work but now work
 
     out_file.close ();
     return 0;

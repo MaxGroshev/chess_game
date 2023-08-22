@@ -18,11 +18,11 @@ bishop_t::~bishop_t () {
 
 bool bishop_t::can_move (const coordinates_t from,
                          const coordinates_t to) const {
-    if (!(my_abs (to.x - from.x) == my_abs (to.y - from.y)) {
-        cout << "Wrong move for bishop"
+    if (!(my_abs (to.x - from.x) == my_abs (to.y - from.y))) {
+        std::cout << "Wrong move for bishop\n";
         return false;
     }
-    return false;
+    return true;
 }
 
 //-----------------------------------------------------------------------------------------

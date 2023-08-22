@@ -57,9 +57,10 @@ class piece_t {
         inline short         get_x     () const {return coordinates.x;};
         inline short         get_y     () const {return coordinates.y;};
         //condition methods
-        bool   short         is_ally   (const piece_t & piece) const;
+        bool                 is_ally   (const piece_t & piece) const;
         //virtual methods
-        virtual bool can_move () const = 0;
+        virtual bool can_move (const coordinates_t from,
+                               const coordinates_t to) const = 0;
 
         //others methods
 };
