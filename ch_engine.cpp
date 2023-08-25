@@ -1,9 +1,12 @@
 #include "ch_engine.h"
+#include "ch_logs.h"
+#include "ch_logs.tpp"
 
 //-----------------------------------------------------------------------------------------
 
 int start_game (board_t  & board) {
-    std::cerr << "Game is started\n";
+   // if (!ch_logs::log_file.is_open ()) {std::cout << "erroe\n";}
+    ch_logs::write_logs ("Game is started\n");
     //init_of_players ();
     //...
     bool checkmate = false;
@@ -14,7 +17,6 @@ int start_game (board_t  & board) {
         if (num_of_move & 1) walking_color = piece::BLACK;
         else                 walking_color = piece::WHITE;
 
-        std::cerr << "Go for move\n";
         get_move (&from, &to);
         if (board.is_allowed_move (from, to, walking_color)) {
             //? better pass classes or work with whole class
@@ -90,7 +92,7 @@ int get_move (piece::coordinates_t*  from, piece::coordinates_t* to) {
         from->y = y_from - 1;
         to->x   = short (x_to   - 'a');
         to->y   = y_to - 1;
-        std::cout << from->x << from->y << " " << to->x << to->y << std::endl;
+        //ch_logs::write_logs (from->x, "\n", ch_logs::log_file);
     }
     return 0;
-} // 34 : 58
+}

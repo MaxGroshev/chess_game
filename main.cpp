@@ -4,12 +4,12 @@
 #include "ch_engine.h"
 
 int main () {
-    //log_init ("./logs/board_dump");
-
+    ch_logs::log_init ("./logs/board_logs");
+    //if (!ch_logs::log_file.is_open ()) {std::cout << "erroe\n";}
     board_t test_board = board_t();
     test_board.dump ();
     start_game (test_board);
-    //log_destr ();
+    ch_logs::log_destr ();
 
     return 0;
 }

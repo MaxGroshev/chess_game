@@ -1,6 +1,7 @@
 TARGET  = chess
 CC      = g++
 CFLAGS  = -Wshadow    							\
+		   -std=c++17							\
 		   -Winit-self 							\
 		   -Wredundant-decls 					\
 		   -Wcast-align							\
