@@ -92,7 +92,7 @@ int get_move (piece::coordinates_t*  from, piece::coordinates_t* to) {
         from->y = y_from - 1;
         to->x   = short (x_to   - 'a');
         to->y   = y_to - 1;
-        //ch_logs::write_logs (from->x, "\n", ch_logs::log_file);
+        ch_logs::write_logs ("The move is: ", x_from, y_from, " : ", x_to, y_to, '\n');
     }
     return 0;
 }

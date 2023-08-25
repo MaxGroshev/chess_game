@@ -5,12 +5,9 @@
 
 template <class... Args>
 int ch_logs::write_logs (Args... log_text) {
-    if (!log_file.is_open ()) {
-        std::cerr << "I feel sorry but log file is not opened\n";
-        print_error_message (CUR_POS_IN_PROG);
-        return -1;
-    }
-    (log_file << ... << log_text);
+    std::ostringstream log_data;
+    (log_data << ... << log_text);
+    ch_logs::put_in_file (log_data.str ());
     return 0;
 }
 

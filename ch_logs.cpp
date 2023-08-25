@@ -1,12 +1,8 @@
-#include "fstream"
-
-static std::ofstream log_file;
-
 #include "ch_logs.h"
-#include "ch_logs.tpp"
 
 //-----------------------------------------------------------------------------------------
 
+static std::ofstream log_file;
 using namespace ch_logs;
 
 //-----------------------------------------------------------------------------------------
@@ -18,12 +14,23 @@ int ch_logs::log_init (const char* name_of_log_file) {
         print_error_message (CUR_POS_IN_PROG);
         return -1;
     }
-    write_logs ("Start of writing logs\n", 56);
+    write_logs ("Start of writing logs\n");
+    return 0;
+}
+
+int ch_logs::put_in_file (std::string log_str) {
+    if (!log_file.is_open ()) {
+        std::cerr << "I feel sorry but log file is not opened\n";
+        print_error_message (CUR_POS_IN_PROG);
+        return -1;
+    }
+    log_file << log_str;
+
     return 0;
 }
 
 int ch_logs::log_destr () {
-    write_logs ("End of writing logs\n", 56);
+    write_logs ("End of writing logs\n");
     log_file.close ();
     std::cout << "close\n";
 
