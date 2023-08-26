@@ -12,9 +12,9 @@ std::ostream & board_t::display_pos (std::ostream & os) {
     using namespace piece;
     for (int i = SIZE_OF_BOARD - 1; i >= 0; i--) {
         for (int j = 0; j < SIZE_OF_BOARD ; j++) {
-            if (cells[i][j].is_empty) os << " 0 ";
+            if (is_empty (cells, short (i), short (j))) os << " 0 ";
             else {
-                switch (cells[i][j].piece->get_name ()) { //TODO: improve
+                switch (cells[i][j]->get_name ()) { //TODO: improve
                     case PAWN:
                         os << " * "; break;
                     case KNIGHT:

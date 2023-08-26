@@ -12,8 +12,7 @@ board_t::board_t () {
     for (short i = 0; i < SIZE_OF_BOARD; i++) {
         if (i > 1 && i < 6) {
             for (int j = 0; j < SIZE_OF_BOARD; j++) {
-                cells[i][j].is_empty = true;
-                cells[i][j].piece    = nullptr;
+                cells[i][j] = nullptr;
             }
         }
         else if (i == 6 || i == 1) { //TODO:make funcs
@@ -22,8 +21,7 @@ board_t::board_t () {
             coordinates_t coord = {0, 0};
             for (short j = 0; j < SIZE_OF_BOARD; j++) {
                 coord = {i, j};
-                cells[i][j].is_empty = false;
-                cells[i][j].piece = new pawn_t (color, coord);
+                cells[i][j] = new pawn_t (color, coord);
             }
         }
         else if (i >= 6 || i <= 1) {//Probably make variable naum of lines
@@ -32,24 +30,23 @@ board_t::board_t () {
             coordinates_t coord = {0, 0};
             for (short j = 0; j < SIZE_OF_BOARD; j++) {
                 coord = {i, j};
-                cells[i][j].is_empty = false;
                 switch (j) { //TODO: make func
                     case 0:
-                        cells[i][j].piece = new rook_t   (color, coord); break;
+                        cells[i][j] = new rook_t   (color, coord); break;
                     case 1:
-                        cells[i][j].piece = new knight_t (color, coord); break;
+                        cells[i][j] = new knight_t (color, coord); break;
                     case 2:
-                        cells[i][j].piece = new bishop_t (color, coord); break;
+                        cells[i][j] = new bishop_t (color, coord); break;
                     case 3:
-                        cells[i][j].piece = new king_t   (color, coord); break;
+                        cells[i][j] = new king_t   (color, coord); break;
                     case 4:
-                        cells[i][j].piece = new queen_t  (color, coord); break;
+                        cells[i][j] = new queen_t  (color, coord); break;
                     case 5:
-                        cells[i][j].piece = new bishop_t (color, coord); break;
+                        cells[i][j] = new bishop_t (color, coord); break;
                     case 6:
-                        cells[i][j].piece = new knight_t (color, coord); break;
+                        cells[i][j] = new knight_t (color, coord); break;
                     case 7:
-                        cells[i][j].piece = new rook_t   (color, coord); break;
+                        cells[i][j] = new rook_t   (color, coord); break;
                 }
             }
         }
@@ -60,10 +57,17 @@ board_t::~board_t () {
     cout << "want_to clear\n";
     for (int i = 0; i < SIZE_OF_BOARD; i++) {
         for (int j = 0; j < SIZE_OF_BOARD; j++) {
-            delete cells[i][j].piece;
+            delete cells[i][j];
         }
     }
 }
+
+bool board_t::is_empty (piece::piece_t* (&cell)[SIZE_OF_BOARD][SIZE_OF_BOARD],
+                        short i, short j) {
+    if (cell[i][j] == nullptr) return true;
+    return false;
+}
+
 
 //-----------------------------------------------------------------------------------------
 

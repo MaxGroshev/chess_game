@@ -11,12 +11,11 @@
 #include <sstream>
 
 #include "../debug_utils/error_control.h"
-//#include "../debug_utils/ASSERT.h"
 #include "../ch_piece/ch_piece.h" //not neccessary
 
 //-----------------------------------------------------------------------------------------
 
-const int buf_size = 64;
+//const int buf_size = 64;
 
 //-----------------------------------------------------------------------------------------
 

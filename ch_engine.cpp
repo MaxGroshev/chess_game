@@ -3,7 +3,6 @@
 //-----------------------------------------------------------------------------------------
 
 int start_game (board_t  & board) {
-   // if (!ch_logs::log_file.is_open ()) {std::cout << "erroe\n";}
     ch_logs::write_logs ("Game is started\n");
     //init_of_players ();
     //...
@@ -44,7 +43,7 @@ bool board_t::is_allowed_move ( const piece::coordinates_t from,
     //     std::cout << "Cell is not emty";
     //     return false;
     // }
-    if (!cells[from.y][from.x].piece->can_move (from, to)) {//exactly this piece rule
+    if (!cells[from.y][from.x]->can_move (cells, from, to)) {//exactly this piece rule
         return false;
     }
     return true;
@@ -52,10 +51,9 @@ bool board_t::is_allowed_move ( const piece::coordinates_t from,
 
 int board_t::change_piece_pos (const piece::coordinates_t* from,
                                const piece::coordinates_t* to) {
-    cells[from->y][from->x].is_empty = true;
-    cells[to->y][to->x].piece        = cells[from->y][from->x].piece;
-    cells[from->y][from->x].piece    = nullptr;
-    cells[to->y][to->x].is_empty     = false;
+    if (is_empty (cells, to->y, to->x)) delete cells[to->y][to->x];
+    cells[to->y][to->x]     = cells[from->y][from->x];
+    cells[from->y][from->x] = nullptr;
 
     return 0;
 }

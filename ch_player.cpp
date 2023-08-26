@@ -12,14 +12,14 @@ player_t::player_t (short color_, std::string player_name_) {
 
     player_name = player_name_;
     color       = color_;
-    num_of_pieces = piece::INIT_NUM_OF_PIECES;
-    num_of_pawns  = piece::INIT_NUM_OF_PAWNS;
-    num_of_knights= piece::INIT_NUM_OF_KNIGHTS;
-    num_of_bishops= piece::INIT_NUM_OF_BISHOPS;
-    num_of_rooks  = piece::INIT_NUM_OF_ROOKS;
-    num_of_queen  = piece::INIT_NUM_OF_QUEENS;
+    num_of_pieces = INIT_NUM_OF_PIECES;
+    num_of_pawns  = INIT_NUM_OF_PAWNS;
+    num_of_knights= INIT_NUM_OF_KNIGHTS;
+    num_of_bishops= INIT_NUM_OF_BISHOPS;
+    num_of_rooks  = INIT_NUM_OF_ROOKS;
+    num_of_queen  = INIT_NUM_OF_QUEENS;
 
-    pieces = (piece::piece_t*) calloc (piece::INIT_NUM_OF_PIECES, sizeof (piece::piece_t));
+    pieces = (piece::piece_t*) calloc (INIT_NUM_OF_PIECES, sizeof (piece::piece_t));
     // if (color_ == piece::WHITE) {
     //     piece::coordinates_t coord = {0,0};
     //     for (int i = 1; i <= piece::INIT_NUM_OF_PIECES; i++) {

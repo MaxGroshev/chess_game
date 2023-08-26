@@ -7,19 +7,12 @@
 #include <string>
 #include <cstdlib>
 
+#include "../ch_game_const/game_consts.h"
 #include "../debug_utils/error_control.h"
 
 //-----------------------------------------------------------------------------------------
 
 namespace piece {
-
-static const short INIT_NUM_OF_PIECES = 16;
-static const short INIT_NUM_OF_PAWNS  = 8;
-static const short INIT_NUM_OF_KNIGHTS= 2;
-static const short INIT_NUM_OF_BISHOPS= 2;
-static const short INIT_NUM_OF_ROOKS  = 2;
-static const short INIT_NUM_OF_QUEENS = 1;
-static const short INIT_NUM_OF_KING   = 1;
 
 enum name_of_piece {
     PAWN   = 0,
@@ -36,7 +29,7 @@ enum color_of_piece {
 };
 
 struct coordinates_t {
-    short x;        //TODO: later make letters for x axis
+    short x;
     short y;
 };
 
@@ -46,9 +39,11 @@ class piece_t {
         short color;
         short name;
         coordinates_t coordinates;
+
+
     public:
         //constructor & destructor
-        explicit piece_t (short color_, coordinates_t coord_);
+        explicit piece_t (short color_ = -1, coordinates_t coord_ = {-1,-1});
         virtual ~piece_t ();
         //get_piece_data methods
         inline short         get_color () const {return color;};
@@ -59,9 +54,10 @@ class piece_t {
         //condition methods
         bool                 is_ally   (const piece_t & piece) const;
         //virtual methods
-        virtual bool can_move (const coordinates_t from,
-                               const coordinates_t to) const = 0;
-
+        virtual bool can_move (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
+                               const coordinates_t from, const coordinates_t to) const = 0;
+        virtual bool is_jump  (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
+                               const coordinates_t from, const coordinates_t to) const = 0;
         //others methods
 };
 

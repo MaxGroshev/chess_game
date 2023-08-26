@@ -17,21 +17,14 @@
 
 //namespace board {
 
-static const short SIZE_OF_BOARD = 8;
-static const short NUM_OF_CELLS = SIZE_OF_BOARD * SIZE_OF_BOARD;
-
-// enum color_of_ {
-//     WHITE = 0,
-//     BLACK = 1,
-// };
-
 class board_t {
+    friend class piece::piece_t;
     private:
-        struct cell_t {
-            bool is_empty;
-            piece::piece_t* piece;
-        };
-        cell_t cells[SIZE_OF_BOARD][SIZE_OF_BOARD]; //don't know: array or pointer
+        // struct cell_t {
+        //     bool is_empty;
+        //     piece::piece_t* piece;
+        // };
+        piece::piece_t* cells[SIZE_OF_BOARD][SIZE_OF_BOARD]; //don't know:array or pointer
 
     public:
         //constructor & destructor
@@ -39,7 +32,9 @@ class board_t {
         virtual ~board_t ();
         //TODO: int init_pawns   ();
         //others methods
-        int dump (const char* dump_file = "./logs/board_dump");
+        bool is_empty (piece::piece_t* (&cell)[SIZE_OF_BOARD][SIZE_OF_BOARD],
+                       short i, short j);
+        int dump      (const char* dump_file = "./logs/board_dump");
         std::ostream & display_pos (std::ostream & os);
         bool is_allowed_move (const piece::coordinates_t from,
                               const piece::coordinates_t to, const short walking_color);
