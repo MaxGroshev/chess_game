@@ -18,7 +18,7 @@ int ch_logs::log_init (const char* name_of_log_file) {
     return 0;
 }
 
-int ch_logs::put_in_file (std::string log_str) {
+int ch_logs::put_in_file (std::string log_str) { //std::string - bed descision
     if (!log_file.is_open ()) {
         std::cerr << "I feel sorry but log file is not opened\n";
         print_error_message (CUR_POS_IN_PROG);
