@@ -70,11 +70,7 @@ board_t::~board_t () {
 int board_t::dump (const char* dump_file) {
     std::ofstream out_file;
     out_file.open (dump_file, std::ios_base::app);
-    if (!out_file.is_open ()) {
-        std::cout << "I feel sorry but out file is not opened";
-        print_error_message (CUR_POS_IN_PROG);
-        return -1;
-    }
+    ASSERT (out_file.is_open ())
 
     out_file << std::endl << "----------Here is dump of board---------\n"
     << "print_time: "  << timestamp ()

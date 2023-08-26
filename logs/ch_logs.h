@@ -10,8 +10,9 @@
 #include <cstdlib>
 #include <sstream>
 
-#include "./debug_utils/error_control.h"
-#include "./ch_piece/ch_piece.h" //not neccessary
+#include "../debug_utils/error_control.h"
+//#include "../debug_utils/ASSERT.h"
+#include "../ch_piece/ch_piece.h" //not neccessary
 
 //-----------------------------------------------------------------------------------------
 

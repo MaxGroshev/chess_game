@@ -1,5 +1,5 @@
 #include "./ch_piece/ch_piece.h"
-#include "ch_logs.h"
+#include "./logs/ch_logs.h"
 #include "ch_board.h"
 #include "ch_engine.h"
 

@@ -43,6 +43,7 @@ OBJ_DIR = ./obj
 
 DEBUG_DIR = ./debug_utils/
 PIECE_DIR = ./ch_piece/
+LOGS_DIR  = ./logs/
 
 ##################################################################################################################
 
@@ -52,6 +53,9 @@ CHESS_OBJ = $(patsubst $(OBJ_DIR)%.cpp, %.o, $(CHESS_SRC))
 #PIECE
 PIECE_SRC = $(wildcard $(PIECE_DIR)*.cpp)
 PIECE_OBJ = $(patsubst $(OBJ_DIR)%.cpp, %.o, $(PIECE_SRC))
+#Logs
+LOGS_SRC = $(wildcard $(LOGS_DIR)*.cpp)
+LOGS_OBJ = $(patsubst $(OBJ_DIR)%.cpp, %.o, $(LOGS_SRC))
 #Debug
 DEBUG_SRC = $(wildcard $(DEBUG_DIR)*.cpp)
 DEBUG_OBJ = $(patsubst $(OBJ_DIR)%.cpp, %.o, $(DEBUG_SRC))
@@ -59,8 +63,8 @@ DEBUG_OBJ = $(patsubst $(OBJ_DIR)%.cpp, %.o, $(DEBUG_SRC))
 ##################################BACK_AND_FRONT####################################################################
 
 all: $(TARGET)
-$(TARGET):  $(CHESS_OBJ) $(DEBUG_OBJ) $(PIECE_OBJ)
-	$(CC) $(CFLAGS) -o $(TARGET) $(CHESS_OBJ) $(DEBUG_OBJ) $(PIECE_OBJ)
+$(TARGET):  $(CHESS_OBJ) $(DEBUG_OBJ) $(PIECE_OBJ) $(LOGS_OBJ)
+	$(CC) $(CFLAGS) -o $(TARGET) $(CHESS_OBJ) $(DEBUG_OBJ) $(PIECE_OBJ) $(LOGS_OBJ)
 
 $(OBJ_DIR)%.o : %.cpp
 	$(CC) $(CFLAGS) $< -o $@

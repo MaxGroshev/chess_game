@@ -1,6 +1,4 @@
 #include "ch_engine.h"
-#include "ch_logs.h"
-#include "ch_logs.tpp"
 
 //-----------------------------------------------------------------------------------------
 
@@ -65,10 +63,7 @@ int board_t::change_piece_pos (const piece::coordinates_t* from,
 //-----------------------------------------------------------------------------------------
 
 int get_move (piece::coordinates_t*  from, piece::coordinates_t* to) {
-    if (is_nullptr (from) || is_nullptr (to)) {
-        std::cout << "ERROR: nullptr\n";
-        print_error_message (CUR_POS_IN_PROG);
-    }
+    ASSERT (!(is_nullptr (from) || is_nullptr (to)))
 
     bool correct_input = false;
     char x_from = '\0';

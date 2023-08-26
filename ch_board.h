@@ -11,7 +11,7 @@
 
 #include "./debug_utils/error_control.h"
 #include "./ch_piece/ch_piece.h" //not neccessary
-#include "ch_logs.h"
+#include "./logs/ch_logs.h"
 
 //-----------------------------------------------------------------------------------------
 

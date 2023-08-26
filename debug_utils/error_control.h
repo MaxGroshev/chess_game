@@ -1,11 +1,14 @@
 #ifndef ERROR_CONTR_H
 #define ERROR_CONTR_H
 
+#define DEBUG
+
 #include <iostream>
 #include <fstream>
 #include <cstring>
 #include <string>
 #include <cstdlib>
+#include "ASSERT.h"
 
 //-----------------------------------------------------------------------------------------
 
