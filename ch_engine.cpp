@@ -19,7 +19,7 @@ int start_game (board_t & board) {
             board.change_piece_pos (&from, &to);
         }
         board.display_pos (std::cout);
-        return 0;
+        //return 0;
     }
     return 0;
 }
