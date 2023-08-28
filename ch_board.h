@@ -19,7 +19,7 @@
 class board_t {
     friend class piece::piece_t;
     private:
-        piece::piece_t* cells[SIZE_OF_BOARD][SIZE_OF_BOARD]; //don't know:array or pointer
+        piece::piece_t* cells[SIZE_OF_BOARD][SIZE_OF_BOARD];
 
     public:
         //constructor & destructor
@@ -29,12 +29,12 @@ class board_t {
         //others methods
         bool is_empty (piece::piece_t* (&cell)[SIZE_OF_BOARD][SIZE_OF_BOARD],
                        short i, short j);
-        int dump      (const char* dump_file = "./logs/board_dump");
+        int  change_piece_pos (const piece::coordinates_t* from,
+                               const piece::coordinates_t* to);
+        int  dump      (const char* dump_file = "./logs/board_dump");
         std::ostream & display_pos (std::ostream & os);
-        bool is_allowed_move (const piece::coordinates_t from,
-                              const piece::coordinates_t to, const short walking_color);
-        int change_piece_pos (const piece::coordinates_t* from,
-                              const piece::coordinates_t* to);
+        //friends methods
+        friend int start_game (board_t & board);
 };
 //}
 

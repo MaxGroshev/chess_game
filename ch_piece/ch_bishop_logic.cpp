@@ -7,7 +7,6 @@ using namespace piece;
 //-----------------------------------------------------------------------------------------
 
 bishop_t::bishop_t (short color_, coordinates_t coord_) : piece_t  (color_, coord_) {
-    std::cout << color_ << std::endl;
     name = BISHOP;
 }
 

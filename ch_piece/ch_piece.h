@@ -31,6 +31,8 @@ enum color_of_piece {
 struct coordinates_t {
     short x;
     short y;
+
+    bool operator== (const coordinates_t & coord) const;
 };
 
 class piece_t {
@@ -39,7 +41,6 @@ class piece_t {
         short color;
         short name;
         coordinates_t coordinates;
-
 
     public:
         //constructor & destructor
@@ -52,20 +53,23 @@ class piece_t {
         inline short         get_x     () const {return coordinates.x;};
         inline short         get_y     () const {return coordinates.y;};
         //condition methods
-        bool                 is_ally   (const piece_t & piece) const;
+        bool is_ally_attac    (const piece_t* piece) const;
+        bool is_allowed_move  (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
+                               const coordinates_t from, const coordinates_t to) const;
         //virtual methods
         virtual bool can_move (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
                                const coordinates_t from, const coordinates_t to) const = 0;
         virtual bool is_jump  (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
                                const coordinates_t from, const coordinates_t to) const = 0;
-        //others methods
+        //friends methods
 };
 
 #include "ch_piece_logic.h"
-
+    bool is_empty  (const piece_t* piece); //does not work in class
 }
 
 //-----------------------------------------------------------------------------------------
+
 
 int my_abs (int x); //make polymorf
 

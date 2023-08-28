@@ -2,7 +2,7 @@
 
 //-----------------------------------------------------------------------------------------
 
-int is_nullptr (void* ptr) {
+int is_nullptr (const void* ptr) {
     if (ptr == nullptr) {
         return 1;
     }

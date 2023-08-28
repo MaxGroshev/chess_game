@@ -13,10 +13,10 @@
 #include "./ch_piece/ch_piece.h" //not neccessary
 #include "ch_player.h"           //probably init of players should be there
 #include "ch_board.h"
+#include "./ch_user_interface/user_interface.h"
 
 //-----------------------------------------------------------------------------------------
 
-int start_game (board_t & board);
-int get_move   (piece::coordinates_t*  from, piece::coordinates_t* to);
+
 
 #endif

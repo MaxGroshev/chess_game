@@ -23,6 +23,5 @@ int ch_logs::put_in_file (std::string log_str) { //std::string - bed descision
 int ch_logs::log_destr () {
     write_logs ("End of writing logs\n");
     log_file.close ();
-    std::cout << "close\n";
     return 0;
 }
