@@ -15,7 +15,11 @@
 
 //-----------------------------------------------------------------------------------------
 
-int get_move (piece::coordinates_t*  from, piece::coordinates_t* to);
+int  get_move         (piece::coordinates_t* from, piece::coordinates_t* to);
+int  enter_move       (piece::coordinates_t*  from, piece::coordinates_t* to);
+int  skip_wrong_input ();
+int  convert_move     (piece::coordinates_t*  from, piece::coordinates_t* to);
+bool is_correct_input (const piece::coordinates_t* from, const piece::coordinates_t* to);
 
 //-----------------------------------------------------------------------------------------
 

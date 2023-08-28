@@ -31,9 +31,10 @@ int start_game (board_t & board) {
 
 int board_t::change_piece_pos (const piece::coordinates_t* from,
                                const piece::coordinates_t* to) {
-    if (is_empty (cells, to->y, to->x)) delete cells[to->y][to->x];
+    if (board_t::is_empty (cells, to->y, to->x)) delete cells[to->y][to->x];
     cells[to->y][to->x]     = cells[from->y][from->x];
     cells[from->y][from->x] = nullptr;
+    ch_logs::write_logs ("Positions are changed after move\n");
 
     return 0;
 }

@@ -9,6 +9,6 @@ int main () {
     test_board.dump ();
     start_game (test_board);
     ch_logs::log_destr ();
-
+    test_board.dump ();
     return 0;
 }

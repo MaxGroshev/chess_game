@@ -40,7 +40,7 @@ bool piece_t::is_allowed_move (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
 //         else return false;
 //     }
 
-    if (can_move (cells, from, to)) {//exactly this piece rule
+    if (!can_move (cells, from, to)) {//exactly this piece rule
         return false;
     }
     return true;

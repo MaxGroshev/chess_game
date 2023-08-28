@@ -34,9 +34,7 @@ bool pawn_t::can_move (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
              (from.y == 6) && !(is_jump (cells, from, to))) {
         return true;
     }
-    else {
-        std::cout << "Wrong pawn move\n";
-    }
+    std::cout << "Wrong pawn move\n";
     return false;
 }
 
