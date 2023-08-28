@@ -16,14 +16,9 @@
 //-----------------------------------------------------------------------------------------
 
 //namespace board {
-
 class board_t {
     friend class piece::piece_t;
     private:
-        // struct cell_t {
-        //     bool is_empty;
-        //     piece::piece_t* piece;
-        // };
         piece::piece_t* cells[SIZE_OF_BOARD][SIZE_OF_BOARD]; //don't know:array or pointer
 
     public:
@@ -40,7 +35,6 @@ class board_t {
                               const piece::coordinates_t to, const short walking_color);
         int change_piece_pos (const piece::coordinates_t* from,
                               const piece::coordinates_t* to);
-
 };
 //}
 

@@ -27,6 +27,7 @@ bool rook_t::can_move (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
 
 bool rook_t::is_jump (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
                       const coordinates_t from, const coordinates_t to) const {
+
     if (from.x == to.x) {
         if (from.y - to.y > 0) {
             for (int i = from.y - 1; i > to.y; i--) {

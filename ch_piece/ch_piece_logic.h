@@ -45,7 +45,7 @@ class bishop_t : public piece_t {
     virtual bool can_move (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
                            const coordinates_t from, const coordinates_t to) const;
     virtual bool is_jump  (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
-                               const coordinates_t from, const coordinates_t to) const;
+                            const coordinates_t from, const coordinates_t to) const;
 };
 
 class rook_t : public piece_t {
@@ -59,7 +59,7 @@ class rook_t : public piece_t {
     virtual bool can_move (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
                            const coordinates_t from, const coordinates_t to) const;
     virtual bool is_jump  (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
-                               const coordinates_t from, const coordinates_t to) const;
+                           const coordinates_t from, const coordinates_t to) const;
 };
 
 class queen_t : public piece_t {
@@ -72,7 +72,7 @@ class queen_t : public piece_t {
     virtual bool can_move (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
                            const coordinates_t from, const coordinates_t to) const;
     virtual bool is_jump  (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
-                               const coordinates_t from, const coordinates_t to) const;
+                           const coordinates_t from, const coordinates_t to) const;
 };
 
 class king_t : public piece_t {
@@ -86,7 +86,7 @@ class king_t : public piece_t {
     virtual bool can_move (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
                            const coordinates_t from, const coordinates_t to) const;
     virtual bool is_jump  (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
-                               const coordinates_t from, const coordinates_t to) const;
+                           const coordinates_t from, const coordinates_t to) const;
 };
 
 //-----------------------------------------------------------------------------------------

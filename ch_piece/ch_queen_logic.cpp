@@ -31,11 +31,12 @@ bool queen_t::can_move (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
 
 bool queen_t::is_jump (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
                         const coordinates_t from, const coordinates_t to) const {
-    // bishop_t tmp_bishop ();
-    // rook_t   tmp_rook ();
-    // if (tmp_bishop.is_jump (cells, from, to) || tmp_rook.rook_t::is_jump (cells, from, to)) {
-    //     return true;
-    // }
+    bishop_t tmp_bishop (this->color, from);
+    rook_t   tmp_rook   (this->color, from);
+    if (tmp_bishop.is_jump (cells, from, to) || tmp_rook.rook_t::is_jump (cells, from, to)) {
+        std::cout << "Wrong move queen";
+        return true;
+    }
     return false;
 }
 

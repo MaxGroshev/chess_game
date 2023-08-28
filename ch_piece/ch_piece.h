@@ -61,7 +61,6 @@ class piece_t {
         //others methods
 };
 
-
 #include "ch_piece_logic.h"
 
 }
