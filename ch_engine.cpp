@@ -3,7 +3,7 @@
 //-----------------------------------------------------------------------------------------
 
 int start_game (board_t & board) {
-    ch_logs::write_logs ("Game is started\n");
+    LOG_INFO ("Game is started\n");
     //init_of_players ();
     //...
     bool checkmate = false;
@@ -19,7 +19,7 @@ int start_game (board_t & board) {
             board.change_piece_pos (&from, &to);
         }
         board.display_pos (std::cout);
-        //return 0;
+        return 0;
     }
     return 0;
 }
@@ -34,7 +34,7 @@ int board_t::change_piece_pos (const piece::coordinates_t* from,
     if (board_t::is_empty (cells, to->y, to->x)) delete cells[to->y][to->x];
     cells[to->y][to->x]     = cells[from->y][from->x];
     cells[from->y][from->x] = nullptr;
-    ch_logs::write_logs ("Positions are changed after move\n");
+    LOG_DEBUG ("Positions are changed after move\n");
 
     return 0;
 }

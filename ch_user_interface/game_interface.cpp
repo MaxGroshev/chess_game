@@ -20,7 +20,7 @@ int get_move (piece::coordinates_t*  from, piece::coordinates_t* to) {
 int enter_move (piece::coordinates_t*  from, piece::coordinates_t* to) {
     scanf ("%c%hd : %c%hd", &(from->x), &(from->y), &(to->x), &(to->y));
     std::cin.get (); //to skip '\n'
-    return 0;   //c++ version?
+    return 0;        //c++ version?
 }
 
 bool is_correct_input (const piece::coordinates_t* from, const piece::coordinates_t* to) {
@@ -42,7 +42,7 @@ int convert_move (piece::coordinates_t*  from, piece::coordinates_t* to) {
     to->x   -= 'a';
     from->y -= 1;
     to->y   -= 1;
-    ch_logs::write_logs ("The move is: ", from->x, from->y, " : ", to->x, to->y, '\n');
+    LOG_INFO ("The move is: ", from->x, from->y, " : ", to->x, to->y, '\n');
     return 0;
 }
 
