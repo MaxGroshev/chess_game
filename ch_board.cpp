@@ -37,8 +37,12 @@ board_t::board_t () {
                         cells[i][j] = new knight_t (color, coord); break;
                     case 2:
                         cells[i][j] = new bishop_t (color, coord); break;
-                    case 3:
-                        cells[i][j] = new king_t   (color, coord); break;
+                    case 3: {
+                        cells[i][j] = new king_t   (color, coord);
+                        if (color == piece::BLACK) b_king = cells[i][j];
+                        else                       w_king = cells[i][j];
+                        break;
+                    }
                     case 4:
                         cells[i][j] = new queen_t  (color, coord); break;
                     case 5:

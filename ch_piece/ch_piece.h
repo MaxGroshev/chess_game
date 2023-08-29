@@ -55,7 +55,14 @@ class piece_t {
         //condition methods
         bool is_ally_attac    (const piece_t* piece) const;
         bool is_allowed_move  (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
-                               const coordinates_t from, const coordinates_t to) const;
+                               const coordinates_t from, const coordinates_t to,
+                               const piece_t* w_king,    const piece_t* b_king,
+                               const int walk_color) const;
+        bool is_check_set     (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
+                               const piece_t* w_king, const piece_t* b_king,
+                               const coordinates_t to) const;
+        int change_piece_pos  (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
+                        const piece::coordinates_t* from, const piece::coordinates_t* to);
         //virtual methods
         virtual bool can_move (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
                                const coordinates_t from, const coordinates_t to) const = 0;

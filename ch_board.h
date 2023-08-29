@@ -20,7 +20,8 @@ class board_t {
     friend class piece::piece_t;
     private:
         piece::piece_t* cells[SIZE_OF_BOARD][SIZE_OF_BOARD];
-
+        piece::piece_t* w_king;
+        piece::piece_t* b_king;
     public:
         //constructor & destructor
         explicit board_t ();
@@ -29,8 +30,8 @@ class board_t {
         //others methods
         bool is_empty (piece::piece_t* (&cell)[SIZE_OF_BOARD][SIZE_OF_BOARD],
                        short i, short j);
-        int  change_piece_pos (const piece::coordinates_t* from,
-                               const piece::coordinates_t* to);
+        // int  change_piece_pos (const piece::coordinates_t* from,
+        //                        const piece::coordinates_t* to);
         int  dump      (const char* dump_file = "./logs/board_dump");
         std::ostream & display_pos (std::ostream & os);
         //friends methods
