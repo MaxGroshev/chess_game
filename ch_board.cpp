@@ -38,9 +38,14 @@ board_t::board_t () {
                     case 2:
                         cells[i][j] = new bishop_t (color, coord); break;
                     case 3: {
-                        cells[i][j] = new king_t   (color, coord);
-                        if (color == piece::BLACK) b_king = cells[i][j];
-                        else                       w_king = cells[i][j];
+                        if (color == piece::BLACK) {
+                            b_king = new king_t (color, coord);
+                            cells[i][j] = b_king;
+                        }
+                        else {
+                            w_king = new king_t (color, coord);
+                            cells[i][j] = w_king;
+                        }
                         break;
                     }
                     case 4:
@@ -52,6 +57,7 @@ board_t::board_t () {
                     case 7:
                         cells[i][j] = new rook_t   (color, coord); break;
                 }
+                ASSERT (!is_nullptr (cells[i][j]));
             }
         }
     }

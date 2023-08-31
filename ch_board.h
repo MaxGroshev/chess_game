@@ -20,8 +20,8 @@ class board_t {
     friend class piece::piece_t;
     private:
         piece::piece_t* cells[SIZE_OF_BOARD][SIZE_OF_BOARD];
-        piece::piece_t* w_king;
-        piece::piece_t* b_king;
+        piece::king_t* w_king;
+        piece::king_t* b_king;
     public:
         //constructor & destructor
         explicit board_t ();

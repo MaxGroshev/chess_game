@@ -8,6 +8,7 @@ using namespace piece;
 
 king_t::king_t (short color_, coordinates_t coord_) : piece_t  (color_, coord_) {
     name = KING;
+    is_checked = false;
 }
 
 king_t::~king_t () {
@@ -29,4 +30,5 @@ bool king_t::is_jump  (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
                        const coordinates_t from, const coordinates_t to) const {
     return false;
 }
+
 //-----------------------------------------------------------------------------------------

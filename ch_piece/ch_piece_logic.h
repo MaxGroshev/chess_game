@@ -77,7 +77,7 @@ class queen_t : public piece_t {
 
 class king_t : public piece_t {
     private:
-
+        bool is_checked;
     public:
     //constructor & destructor
     explicit king_t (short color_, coordinates_t coord_);
@@ -87,6 +87,7 @@ class king_t : public piece_t {
                            const coordinates_t from, const coordinates_t to) const;
     virtual bool is_jump  (piece_t* (&cells)[SIZE_OF_BOARD][SIZE_OF_BOARD],
                            const coordinates_t from, const coordinates_t to) const;
+    inline  int  set_check() {is_checked = true; return 0;};
 };
 
 //-----------------------------------------------------------------------------------------

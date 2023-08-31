@@ -20,7 +20,7 @@ int start_game (board_t & board) {
             num_of_move++;
         }
         board.display_pos (std::cout);
-        //return 0;
+        return 0;
     }
     return 0;
 }

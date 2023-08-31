@@ -72,7 +72,14 @@ class piece_t {
 };
 
 #include "ch_piece_logic.h"
-    bool is_empty  (const piece_t* piece); //does not work in class
+// struct move_t {
+//     coordinates_t from;
+//     coordinates_t to;
+//     king_t defend_king;
+//     king_t attac_king;
+//     int    walk_color;
+// };
+bool is_empty  (const piece_t* piece); //does not work in class
 }
 
 //-----------------------------------------------------------------------------------------
